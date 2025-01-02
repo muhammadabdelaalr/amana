@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Amana</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <style>
+      :root {
+        --white: #ffffff;
+        --overlay: rgba(4, 53, 49, 0.6);
+        --main: #00958A;
+        --main-light: #F3FCF6;
+        --bg: #F9FAFB;
+        --border: #D2D6DB;
+        --transition: all 0.3s ease;
+      }
+      body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        direction: rtl;
+        background-color: var(--bg);
+      }
+      h1, h2, h3, h4, h5, h6, p {
+        margin: 0;
+        padding: 0;
+      }
+      .form-check {
+        label {
+          font-size: .92rem;
+          max-width: 100%;
+        }
+        .form-check-input:checked::before {
+          background-color: var(--main);
+        }
+        .form-check-input:checked {
+          background-color: var(--main);
+          border-color: var(--main);
+          box-shadow: none;
+        }
+  
+        .form-check-input {
+          accent-color: var(--main);
+        }
+      }
+      .btn-outline-primary {
+        color: var(--main);
+        border-color: var(--main);
+        &:hover {
+          color: var(--white);
+          background-color: var(--main);
+            border-color: var(--main);
+        }   
+      }
+      header {
+        background-image: linear-gradient(
+            var(--overlay),
+            var(--overlay)
+          ),
+          url("./imgs/header.png");
+        background-size: cover;
+        background-position: center 62%;
+        background-repeat: no-repeat;
+        .breadcrumb {
+          margin: 0;
+          background: transparent;
+          .breadcrumb-item {
+            padding-right: var(--bs-breadcrumb-item-padding-x);
+              a {
+                color: var(--white);
+                text-decoration: none;
+              }
+          }
+          .breadcrumb-item+.breadcrumb-item::before {
+            content: ">";
+            color: var(--white);
+            float: right;
+            padding-left: var(--bs-breadcrumb-item-padding-x);
+          }
+        }
+        .title {
+          padding-inline: 1rem;
+          color: var(--white);
+          font-size: 1.5rem;
+          font-weight: bold;
+        }
+      }
+      .searching {
+        .form-group {
+            height: 40px;
+            margin: 0;
+            .icon {
+                top: 50%;
+                transform: translateY(-50%);
+                right: 1rem;
+            }
+        }
+          input.search {
+            height: 100%;
+            padding: .5rem 2.5rem;
+            box-shadow: none !important;
+            &:hover, &:focus, &:active {
+              border-color: var(--main);
+            }
+          }
+          .categories {
+            .card-category {
+                background: var(--white);
+                padding: 1rem;
+                border: 1px solid var(--border);
+                border-radius: .5rem;
+                transition: var(--transition);
+                cursor: pointer;
+                .icon {
+                    background-color: var(--main-light);
+                    padding: 1rem;
+                    border-radius: 50%;
+                }
+                .title {
+                    font-size: 1.5rem;
+                    font-weight: bold;
+                }
+                .services-count {
+                    font-size: .8rem;
+                }
+                &:hover, &.active {
+                    border-color: var(--main);
+                }
+            }
+          }
+          aside {
+            background-color: var(--white);
+            border-radius: .5rem;
+            border: 1px solid var(--border);
+            .sub-categories {
+                .form-check {
+                  padding-block: .2rem;
+                  padding-right: 1.5em;
+                  input {
+                    float: right;
+                    margin-right: -1.5em;
+                  }
+                }
+            }
+          }
+      }
+      .dropdown-toggle::after {
+        margin-inline: .255em;
+      }
+    </style>
+  </head>
+  <body>
+    <section class="mb-5">
+      <header class="py-5 mb-3">
+        <div class="container">
+          <div
+            class="header d-flex flex-column justify-content-center align-items-start"
+          >
+            <nav aria-label="breadcrumb">
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/">الرئيسية</a></li>
+                <li class="breadcrumb-item">
+                  <a href="/">الخدمات</a>
+                </li>
+              </ol>
+            </nav>
+            <h2 class="title">الخدمات</h2>
+          </div>
+        </div>
+      </header>
+      <div class="searching">
+        <div class="container">
+            <form class="d-flex flex-column align-items-center gap-2" action="" method="get">
+                <div class="head w-100 d-flex align-items-center gap-2">
+                    <div class="form-group position-relative w-100">
+                        <input type="text" class="form-control search" placeholder="ابحث عن خدمة">
+                        <div class="icon d-flex position-absolute">
+                            <img src="./imgs/icons/Leading-icon.svg" loading="lazy" alt="search">
+                        </div>
+                    </div>
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-primary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">ترتيب بالاحدث</button>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item">الاحدث</a>
+                            <a class="dropdown-item">الاقدم</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="categories w-100">
+                    <div class="row">
+                        <div class="col">
+                            <div class="card-category d-flex flex-column align-items-start gap-2 active">
+                                <div class="icon">
+                                    <img src="./imgs/icons/briefcase-04.svg" alt="category1">
+                                </div>
+                                <div class="titles">
+                                    <h3 class="title">أعمال</h3>
+                                    <p class="services-count">
+                                        <span>350</span>
+                                        <span>خدمة</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card-category d-flex flex-column align-items-start gap-2">
+                                <div class="icon">
+                                    <img src="./imgs/icons/user-multiple-02.svg" alt="category1">
+                                </div>
+                                <div class="titles">
+                                    <h3 class="title">أفراد</h3>
+                                    <p class="services-count">
+                                        <span>320</span>
+                                        <span>خدمة</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card-category d-flex flex-column align-items-start gap-2">
+                                <div class="icon">
+                                    <img src="./imgs/icons/new-office.svg" alt="category1">
+                                </div>
+                                <div class="titles">
+                                    <h3 class="title">حكومة</h3>
+                                    <p class="services-count">
+                                        <span>350</span>
+                                        <span>خدمة</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <main class="w-100">
+                    <div class="row">
+                        <div class="col-3">
+                            <aside class="p-3">
+                                <h4 class="mb-2">فئات</h4>
+                                <div class="sub-categories">
+                                  <div class="form-check  text-truncate">
+                                    <label class="form-check-label" for="category1">
+                                        خدمات رخص الأنشطة التجارية
+                                    </label>
+                                    <input class="form-check-input" type="radio" name="category" id="category1">
+                                  </div>
+                                  <div class="form-check  text-truncate">
+                                    <label class="form-check-label" for="category2">
+                                        خدمات الرخص الإنشائية
+                                    </label>
+                                    <input class="form-check-input" type="radio" name="category" id="category2">
+                                  </div>
+                                  <div class="form-check  text-truncate">
+                                    <label class="form-check-label" for="category3">
+                                        خدمات التصاريح
+                                    </label>
+                                    <input class="form-check-input" type="radio" name="category" id="category3">
+                                  </div>
+                                  <div class="form-check  text-truncate">
+                                    <label class="form-check-label" for="category4">
+                                        خدمات الأراضي والمخططات
+                                    </label>
+                                    <input class="form-check-input" type="radio" name="category" id="category4">
+                                  </div>
+                                  <div class="form-check  text-truncate">
+                                    <label class="form-check-label" for="category5">
+                                        الخدمات الاستعلامية
+                                    </label>
+                                    <input class="form-check-input" type="radio" name="category" id="category5">
+                                  </div>
+                                  <div class="form-check  text-truncate">
+                                    <label class="form-check-label" for="category6">
+                                        تعديلات الرسوم
+                                    </label>
+                                    <input class="form-check-input" type="radio" name="category" id="category6">
+                                  </div>
+                                  <div class="form-check  text-truncate">
+                                    <label class="form-check-label" for="category7">
+                                        خدمات الشهادات الصحية
+                                    </label>
+                                    <input class="form-check-input" type="radio" name="category" id="category7">
+                                  </div>
+                                  <div class="form-check  text-truncate">
+                                    <label class="form-check-label" for="category8">
+                                        المنشآت الفندقية والمطاعم وسلامة 
+                                    </label>
+                                    <input class="form-check-input" type="radio" name="category" id="category8">
+                                  </div>
+                                  <div class="form-check  text-truncate">
+                                    <label class="form-check-label" for="category9">
+                                        تأجير وأشغال منتجات البلدية
+                                    </label>
+                                    <input class="form-check-input" type="radio" name="category" id="category9">
+                                  </div>
+                                  <div class="form-check  text-truncate">
+                                    <label class="form-check-label" for="category10">
+                                        الترقية والمكافآت
+                                    </label>
+                                    <input class="form-check-input" type="radio" name="category" id="category10">
+                                  </div>
+                                  <div class="form-check  text-truncate">
+                                    <label class="form-check-label" for="category11">
+                                        تعديلات الرسوم
+                                    </label>
+                                    <input class="form-check-input" type="radio" name="category" id="category11">
+                                  </div>
+                                </div>
+
+                            </aside>
+                        </div>
+                        <div class="col-9">
+                          .ra
+                        </div>
+                    </div>
+                </main>
+            </form>
+            </div>
+        </div>
+      </div>
+    </section>
+
+    <script>
+        $(document).ready(function () {
+            $(".dropdown-toggle").dropdown();
+        });
+        // const cardsList = [
+        //     {
+        //         title: "خدمة 1",
+        //         desc: "هذه الخدمة 1",
+        //         img: "card1.jpg",
+        //         category: "category1"
+        //     },
+        //     {
+        //         title: "خدمة 2",
+        //         desc: "هذه الخدمة 2",
+        //         img: "card2.jpg",
+        //         category: "category1"
+        //     },
+        //     {
+        //         title: "خدمة 3",
+        //         desc: "هذه الخدمة 3",
+        //         img: "card3.jpg",
+        //         category: "category2"
+        //     },
+        //     {
+        //         title: "خدمة 4",
+        //         desc: "هذه الخدمة 4",
+        //         img: "card4.jpg",
+        //         category: "category2"
+        //     }
+        // ];
+
+        // const cardsHTML = cardsList.map(card => {
+        //     return `
+        //         <div class="col-md-3">
+        //             <div class="card">
+        //                 <img src="${card.img}" class="card-img-top" alt="${card.title}">
+        //                 <div class="card-body">
+        //                     <h5 class="card-title">${card.title}</h5>
+        //                     <p class="card-text">${card.desc}</p>
+        //                     <a href="#" class="btn btn-primary">اطلب الخدمة</a>
+        //                 </div>
+        //                 <div class="card-footer">
+        //                     <small class="text-muted">${card.category}</small>
+        //                 </div>
+        //             </div>
+        //         </div>
+        //     `;
+        // }).join("");
+
+        // document.querySelector(".categories .row").insertAdjacentHTML("beforeend", cardsHTML);
+    </script>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <!-- jQuery -->
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG8Kdt:"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
