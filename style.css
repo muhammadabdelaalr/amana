@@ -1,15 +1,21 @@
 :root {
   --white: #ffffff;
+  --text: #1F2A37;
   --overlay: rgba(4, 53, 49, 0.6);
   --main: #00958a;
   --main-light: #f3fcf6;
   --bg: #f9fafb;
   --border: #d2d6db;
+  --sub-service-primary-bg: #ecfdf3;
+  --sub-service-primary-border: #abefc6;
+  --sub-service-secondary-bg: #EFF8FF;
+  --sub-service-secondary-border: #B2DDFF;
   --transition: all 0.3s ease;
 }
 body {
   margin: 0;
   padding: 0;
+  color: var(--text);
   box-sizing: border-box;
   direction: rtl;
   background-color: var(--bg);
@@ -45,12 +51,41 @@ p {
 .btn-outline-primary {
   color: var(--main);
   border-color: var(--main);
-  &:hover {
+  &:hover,
+  &:focus-visible,
+  &:active {
     color: var(--white);
-    background-color: var(--main);
+    background-color: var(--main) !important;
     border-color: var(--main);
   }
 }
+.btn-primary {
+  --bs-btn-color: var(--white);
+  --bs-btn-bg: var(--main);
+  --bs-btn-border-color: var(--main);
+  --bs-btn-hover-bg: var(--main);
+  --bs-btn-hover-border-color: var(--main);
+  --bs-btn-focus-bg: var(--main);
+  --bs-btn-focus-border-color: var(--main);
+  --bs-btn-active-bg: var(--main);
+  --bs-btn-active-border-color: var(--main);
+  --bs-btn-disabled-bg: var(--main);
+  --bs-btn-disabled-border-color: var(--main);
+
+  color: var(--white);
+  background-color: var(--main);
+  border-color: var(--main);
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active,
+.btn-primary:disabled {
+  color: var(--white);
+  background-color: var(--main);
+  border-color: var(--main);
+}
+
 header {
   background-image: linear-gradient(var(--overlay), var(--overlay)),
     url("./imgs/header.png");
@@ -138,6 +173,26 @@ header {
         input {
           float: right;
           margin-right: -1.5em;
+        }
+      }
+    }
+  }
+  .cards {
+    .card {
+      .sub-services {
+        .sub-text {
+          font-size: 12px;
+          padding: 5px;
+          &.primary {
+            background-color: var(--sub-service-primary-bg);
+            border: 1px solid var(--sub-service-primary-border);
+            color: var(--main);
+          }
+          &.secondary {
+            background-color: var(--sub-service-secondary-bg);
+            border: 1px solid var(--sub-service-secondary-border);
+          }
+          
         }
       }
     }
