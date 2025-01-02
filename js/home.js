@@ -3,21 +3,21 @@ document.addEventListener("DOMContentLoaded", () => {
     {
       title: "خدمة رخصة البناء",
       description: "خدمة تقديم طلب للحصول على رخصة بناء جديدة",
-      imgSrc: "./imgs/card.png",
+      imgSrc: "../imgs/card.png",
       primaryText: "خدمات الرخص الأنشطة التجارية",
       secondaryText: "خدمات بلدي",
     },
     {
       title: "خدمة تجديد الرخصة",
       description: "تجديد رخصة بناء قائمة بسهولة",
-      imgSrc: "./imgs/card.png",
+      imgSrc: "../imgs/card.png",
       primaryText: "تجديد الرخص",
       secondaryText: "خدمات بلدي",
     },
     {
       title: "خدمة إلغاء الرخصة",
       description: "إلغاء رخصة بناء حالية",
-      imgSrc: "./imgs/card.png",
+      imgSrc: "../imgs/card.png",
       primaryText: "إلغاء الرخص",
       secondaryText: "خدمات بلدي",
     },
@@ -30,13 +30,13 @@ document.addEventListener("DOMContentLoaded", () => {
     const card = `
       <div class="card text-end shadow-sm">
         <div class="card-body d-flex flex-column row-gap-3">
-          <div class="logo">
+          <div class="logo d-flex">
             <img
               src="${service.imgSrc}"
               alt="icon"
               loading="lazy"
-              width="50"
-              height="50"
+              width="50px"
+              height="50px"
             />
           </div>
           <h5 class="card-title">${service.title}</h5>
@@ -63,6 +63,7 @@ document.addEventListener("DOMContentLoaded", () => {
   $("#servicesCarousel").owlCarousel({
     rtl: true,
     loop: true,
+    dots: true,
     margin: 20,
     nav: true,
     dots: true,

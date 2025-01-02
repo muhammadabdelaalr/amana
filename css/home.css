@@ -1,0 +1,23 @@
+.carousel-container {
+  .card {
+    .sub-services {
+      .sub-text {
+        font-size: 12px;
+        padding: 5px;
+        &.primary {
+          background-color: var(--sub-service-primary-bg);
+          border: 1px solid var(--sub-service-primary-border);
+          color: var(--main);
+        }
+        &.secondary {
+          background-color: var(--sub-service-secondary-bg);
+          border: 1px solid var(--sub-service-secondary-border);
+        }
+      }
+    }
+  }
+}
+.logo {
+  width: 50px;
+  height: 50px;
+}
