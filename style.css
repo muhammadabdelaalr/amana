@@ -1,6 +1,6 @@
 :root {
   --white: #ffffff;
-  --text: #1F2A37;
+  --text: #1f2a37;
   --overlay: rgba(4, 53, 49, 0.6);
   --main: #00958a;
   --main-light: #f3fcf6;
@@ -8,8 +8,8 @@
   --border: #d2d6db;
   --sub-service-primary-bg: #ecfdf3;
   --sub-service-primary-border: #abefc6;
-  --sub-service-secondary-bg: #EFF8FF;
-  --sub-service-secondary-border: #B2DDFF;
+  --sub-service-secondary-bg: #eff8ff;
+  --sub-service-secondary-border: #b2ddff;
   --transition: all 0.3s ease;
 }
 body {
@@ -192,7 +192,6 @@ header {
             background-color: var(--sub-service-secondary-bg);
             border: 1px solid var(--sub-service-secondary-border);
           }
-          
         }
       }
     }
@@ -200,4 +199,64 @@ header {
 }
 .dropdown-toggle::after {
   margin-inline: 0.255em;
+}
+
+.carousel-container {
+  .card {
+    width: 25%;
+    .sub-services {
+      .sub-text {
+        font-size: 12px;
+        padding: 5px;
+        &.primary {
+          background-color: var(--sub-service-primary-bg);
+          border: 1px solid var(--sub-service-primary-border);
+          color: var(--main);
+        }
+        &.secondary {
+          background-color: var(--sub-service-secondary-bg);
+          border: 1px solid var(--sub-service-secondary-border);
+        }
+      }
+    }
+  }
+}
+.services-section {
+  direction: rtl;
+}
+
+.services-header h2 {
+  font-size: 1.8rem;
+}
+
+.services-header p {
+  font-size: 1rem;
+  color: #6c757d;
+}
+
+.carousel-container .card {
+  border-radius: 8px;
+  text-align: end;
+  padding: 15px;
+}
+
+.carousel-container .card .logo img {
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.carousel-container .sub-services .sub-text {
+  font-size: 12px;
+  padding: 5px;
+}
+
+.carousel-container .sub-services .sub-text.primary {
+  background-color: var(--sub-service-primary-bg, #e0f7fa);
+  border: 1px solid var(--sub-service-primary-border, #00acc1);
+  color: var(--main, #004d40);
+}
+
+.carousel-container .sub-services .sub-text.secondary {
+  background-color: var(--sub-service-secondary-bg, #f1f8e9);
+  border: 1px solid var(--sub-service-secondary-border, #8bc34a);
 }
