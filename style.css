@@ -1,0 +1,148 @@
+:root {
+  --white: #ffffff;
+  --overlay: rgba(4, 53, 49, 0.6);
+  --main: #00958a;
+  --main-light: #f3fcf6;
+  --bg: #f9fafb;
+  --border: #d2d6db;
+  --transition: all 0.3s ease;
+}
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  direction: rtl;
+  background-color: var(--bg);
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+  padding: 0;
+}
+.form-check {
+  label {
+    font-size: 0.92rem;
+    max-width: 100%;
+  }
+  .form-check-input:checked::before {
+    background-color: var(--main);
+  }
+  .form-check-input:checked {
+    background-color: var(--main);
+    border-color: var(--main);
+    box-shadow: none;
+  }
+
+  .form-check-input {
+    accent-color: var(--main);
+  }
+}
+.btn-outline-primary {
+  color: var(--main);
+  border-color: var(--main);
+  &:hover {
+    color: var(--white);
+    background-color: var(--main);
+    border-color: var(--main);
+  }
+}
+header {
+  background-image: linear-gradient(var(--overlay), var(--overlay)),
+    url("./imgs/header.png");
+  background-size: cover;
+  background-position: center 62%;
+  background-repeat: no-repeat;
+  .breadcrumb {
+    margin: 0;
+    background: transparent;
+    .breadcrumb-item {
+      padding-right: var(--bs-breadcrumb-item-padding-x);
+      a {
+        color: var(--white);
+        text-decoration: none;
+      }
+    }
+    .breadcrumb-item + .breadcrumb-item::before {
+      content: ">";
+      color: var(--white);
+      float: right;
+      padding-left: var(--bs-breadcrumb-item-padding-x);
+    }
+  }
+  .title {
+    padding-inline: 1rem;
+    color: var(--white);
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+}
+.searching {
+  .form-group {
+    height: 40px;
+    margin: 0;
+    .icon {
+      top: 50%;
+      transform: translateY(-50%);
+      right: 1rem;
+    }
+  }
+  input.search {
+    height: 100%;
+    padding: 0.5rem 2.5rem;
+    box-shadow: none !important;
+    &:hover,
+    &:focus,
+    &:active {
+      border-color: var(--main);
+    }
+  }
+  .categories {
+    .card-category {
+      background: var(--white);
+      padding: 1rem;
+      border: 1px solid var(--border);
+      border-radius: 0.5rem;
+      transition: var(--transition);
+      cursor: pointer;
+      .icon {
+        background-color: var(--main-light);
+        padding: 1rem;
+        border-radius: 50%;
+      }
+      .title {
+        font-size: 1.5rem;
+        font-weight: bold;
+      }
+      .services-count {
+        font-size: 0.8rem;
+      }
+      &:hover,
+      &.active {
+        border-color: var(--main);
+      }
+    }
+  }
+  aside {
+    background-color: var(--white);
+    border-radius: 0.5rem;
+    border: 1px solid var(--border);
+    .sub-categories {
+      .form-check {
+        padding-block: 0.2rem;
+        padding-right: 1.5em;
+        input {
+          float: right;
+          margin-right: -1.5em;
+        }
+      }
+    }
+  }
+}
+.dropdown-toggle::after {
+  margin-inline: 0.255em;
+}
