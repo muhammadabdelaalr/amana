@@ -195,6 +195,43 @@ header {
         }
       }
     }
+    .page-item .page-link {
+      position: relative;
+      color: var(--text);
+      border-radius: var(--bs-pagination-border-radius);
+    }
+    .active > .page-link {
+      color: var(--white);
+      background-color: var(--main);
+      border-color: var(--main);
+    }
+    .prev-link .page-link {
+      padding-inline-start: 1.8rem;
+      &::after {
+        content: "<";
+        position: absolute;
+        left: 4rem;
+        top: 50%;
+        transform: translateY(-56%);
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: var(--text);
+      }
+    }
+
+    .next-link .page-link {
+      padding-inline-end: 1.8rem;
+      &::after {
+        content: ">";
+        position: absolute;
+        right: 3.5rem;
+        top: 50%;
+        transform: translateY(-56%);
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: var(--text);
+      }
+    }
   }
 }
 .dropdown-toggle::after {
